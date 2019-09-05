@@ -12,6 +12,7 @@ blocks:
           - checkout
           - node --version
           - npm --version
+          - now -v
       jobs:
         - name: npm install and cache
           commands:
