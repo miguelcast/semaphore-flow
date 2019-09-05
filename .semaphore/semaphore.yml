@@ -32,3 +32,14 @@ blocks:
           commands:
             - cache restore
             - npm run lint
+  - name: Deploy to Zeit
+    task:
+      secrets:
+        - name: ZEIT
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: Deploy
+          commands:
+            - now --token=$ZEIT_TOKEN
