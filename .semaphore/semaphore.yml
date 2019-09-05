@@ -17,11 +17,8 @@ blocks:
           commands:
             - cache restore
             - npm install
-            - cache store
-        - name: Install now
-          commands:
             - npm i -g now
-            - now -v
+            - cache store
   - name: NextJs Check Eslint
     task:
       prologue:
