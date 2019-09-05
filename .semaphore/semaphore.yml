@@ -20,3 +20,13 @@ blocks:
             - cache restore
             - npm install
             - cache store
+  - name: NextJs Check Eslint
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: npm check
+          commands:
+            - cache restore
+            - npm run lint
