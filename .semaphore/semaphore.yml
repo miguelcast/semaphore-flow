@@ -17,7 +17,6 @@ blocks:
           commands:
             - cache restore
             - npm install
-            - npm i -g now
             - cache store
   - name: NextJs Check Eslint
     task:
@@ -40,4 +39,5 @@ blocks:
         - name: Deploy
           commands:
             - cache restore
+            - npm i -g now
             - now --token=$ZEIT_TOKEN
