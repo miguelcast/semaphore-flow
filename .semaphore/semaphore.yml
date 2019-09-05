@@ -7,12 +7,16 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Node.js example
+  - name: NextJs Install dependencies
     task:
+      prologue:
+        commands:
+          - checkout
+          - node --version
+          - npm --version
       jobs:
-        - name: Run some code
+        - name: npm install and cache
           commands:
-            - node -p '"evol".split("").reverse().join("")'
-            # Uncomment the following line to pull your code,
-            # then proceed by adding your custom commands:
-            #- checkout
+            - cache restore
+            - npm install
+            - cache store
