@@ -12,7 +12,6 @@ blocks:
           - checkout
           - node --version
           - npm --version
-          - now -v
       jobs:
         - name: npm install and cache
           commands:
@@ -22,6 +21,7 @@ blocks:
         - name: Install now
           commands:
             - npm i -g now
+            - now -v
   - name: NextJs Check Eslint
     task:
       prologue:
