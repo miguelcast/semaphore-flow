@@ -1,5 +1,3 @@
-# For more Node.js and JavaScript information and examples, see
-# https://docs.semaphoreci.com/article/82-language-javascript-and-nodejs
 version: v1.0
 name: semaphore-flow-dev
 agent:
@@ -20,6 +18,9 @@ blocks:
             - cache restore
             - npm install
             - cache store
+        - name: Install now
+          commands:
+            - npm i -g now
   - name: NextJs Check Eslint
     task:
       prologue:
