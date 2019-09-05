@@ -42,4 +42,5 @@ blocks:
       jobs:
         - name: Deploy
           commands:
+            - cache restore
             - now --token=$ZEIT_TOKEN
