@@ -1,0 +1,17 @@
+version: v1.0
+name: Deploy to Zeit Staging
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Deploy to Zeit
+      task:
+        secrets:
+            - name: ZEIT
+        jobs:
+          - name: Deploy
+            commands:
+              - cache restore
+              - npm i -g now
+              - now --token=$ZEIT_TOKEN

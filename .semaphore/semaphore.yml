@@ -28,16 +28,6 @@ blocks:
           commands:
             - cache restore
             - npm run lint
-  - name: Deploy to Zeit
-    task:
-      secrets:
-        - name: ZEIT
-      prologue:
-        commands:
-          - checkout
-      jobs:
-        - name: Deploy
-          commands:
-            - cache restore
-            - npm i -g now
-            - now --token=$ZEIT_TOKEN
+promotions:
+  - name: Deploy to Zeit Staiging
+      pipeline_file: staiging-deploy.yml
