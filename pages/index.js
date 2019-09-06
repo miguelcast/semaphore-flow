@@ -54,7 +54,7 @@ const Home = () => (
       .title,
       .description {
         text-align: center;
-        color: salmon;
+        color: green;
       }
       .row {
         max-width: 880px;
