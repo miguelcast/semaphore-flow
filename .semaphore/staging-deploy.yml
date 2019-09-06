@@ -7,6 +7,11 @@ agent:
 blocks:
   - name: Deploy to Zeit
     task:
+      prologue:
+        commands:
+          - checkout
+          - node --version
+          - npm --version
       secrets:
           - name: ZEIT
       jobs:
