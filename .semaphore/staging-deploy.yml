@@ -6,12 +6,12 @@ agent:
     os_image: ubuntu1804
 blocks:
   - name: Deploy to Zeit
-      task:
-        secrets:
-            - name: ZEIT
-        jobs:
-          - name: Deploy
-            commands:
-              - cache restore
-              - npm i -g now
-              - now --token=$ZEIT_TOKEN
+    task:
+      secrets:
+          - name: ZEIT
+      jobs:
+        - name: Deploy
+          commands:
+            - cache restore
+            - npm i -g now
+            - now --token=$ZEIT_TOKEN
