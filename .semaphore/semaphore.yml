@@ -30,4 +30,4 @@ blocks:
             - npm run lint
 promotions:
   - name: Deploy to Zeit Staiging
-      pipeline_file: staiging-deploy.yml
+    pipeline_file: staiging-deploy.yml
